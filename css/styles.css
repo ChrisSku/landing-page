@@ -83,11 +83,10 @@ section.collapsed {
 }
 
 section.collapsed p {
-    opacity:  0 ;
+    opacity: 0;
     height: 0;
     transition: 0.8s;
 }
-
 
 /* ---- Module Rules ---- */
 
@@ -282,10 +281,8 @@ section.your-active-class .landing__container::after {
 
 .navbar__menu.slide-in {
     transition: 0.7s;
-    opacity: 1; 
+    opacity: 1;
 }
-    
-
 
 #to_top_button {
     position: fixed;
