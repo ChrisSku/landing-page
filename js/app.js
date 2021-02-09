@@ -35,9 +35,11 @@ function addHTMLLinksForSections(sectionList) {
     let insertHtml = ''
     for (const section of sectionList) {
         insertHtml += `<li>
-                <a class="menu__link" data-nav="${section.getAttribute(
-                    'data-nav'
-                )}">
+                <a 
+                class="menu__link" 
+                data-nav="${section.getAttribute('data-nav')}"
+                href="#${section.id}"
+                >
                     ${section.querySelector('h2').textContent}
                 </a>
             </li>
@@ -179,11 +181,13 @@ toTopButton.addEventListener('click', () =>
 
 navbarList.addEventListener('click', (event) => {
     const target = event.target
-    if (target.tagName === 'A')
+    if (target.tagName === 'A') {
+        event.preventDefault()
         getElementByTagAndDataNav('section', target).scrollIntoView({
             behavior: 'smooth',
             block: 'start'
         })
+    }
 })
 
 // Scroll to section on link click
